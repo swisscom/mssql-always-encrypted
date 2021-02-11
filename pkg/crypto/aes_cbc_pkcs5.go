@@ -54,8 +54,8 @@ func PKCS5Padding(inArr []byte, blockSize int) []byte {
 }
 
 func PKCS5Trim(inArr []byte) []byte {
-	padding := inArr[len(inArr)-1] - 1
-	return inArr[:len(inArr)-2*int(padding)]
+	padding := inArr[len(inArr)-1]
+	return inArr[:len(inArr)-int(padding)]
 }
 
 func (a *AESCbcPKCS5) initCipher() {

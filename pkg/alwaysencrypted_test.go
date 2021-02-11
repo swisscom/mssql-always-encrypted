@@ -98,7 +98,7 @@ func TestDecrypt(t *testing.T) {
 		t.Fatal(err)
 	}
 	fmt.Printf("column value: \"%02X\"", cleartextUtf8)
-	assert.Equal(t, "12345", string(cleartextUtf8))
+	assert.Equal(t, "12345     ", string(cleartextUtf8))
 }
 func TestDecryptCEK(t *testing.T) {
 	certFile, err := os.Open("../test/always-encrypted.pem")
