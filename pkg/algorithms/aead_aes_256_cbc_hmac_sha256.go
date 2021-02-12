@@ -86,7 +86,6 @@ func (a *AeadAes256CbcHmac256Algorithm) Decrypt(ciphertext []byte) ([]byte, erro
 	cleartext := aescdbc.Decrypt(realCiphertext)
 
 	return cleartext, nil
-
 }
 
 func (a *AeadAes256CbcHmac256Algorithm) prepareAuthTag(iv []byte, ciphertext []byte) []byte {

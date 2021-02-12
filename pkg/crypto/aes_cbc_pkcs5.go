@@ -42,7 +42,7 @@ func (a AESCbcPKCS5) Decrypt(ciphertext []byte) []byte {
 	}
 
 	blockMode := cipher.NewCBCDecrypter(a.block, a.iv)
-	var cleartext = make([]byte, 32)
+	var cleartext = make([]byte, len(ciphertext))
 	blockMode.CryptBlocks(cleartext, ciphertext)
 	return PKCS5Trim(cleartext)
 }
